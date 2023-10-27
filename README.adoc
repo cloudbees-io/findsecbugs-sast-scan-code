@@ -1,0 +1,64 @@
+= CloudBees action: Scan with Find Security Bugs
+
+Use this action to scan a Git repository with link:http://find-sec-bugs.github.io/[Find Security Bugs], a SpotBugs plugin. The Find Security Bugs plugin detects security vulnerabilities in:
+
+* Java web applications.
+* Android applications.
+* Kotlin, Groovy, and Scala projects.
+
+== Inputs
+
+[cols="2a,1a,1a,3a",options="header"]
+.Input details
+|===
+
+| Input name
+| Data type
+| Required?
+| Description
+
+| `language`
+| String
+| No
+| The language of your Git repository code base.
+Refer to the supported languages below.
+
+|===
+
+== Supported languages
+
+[cols="1a,1a",options="header"]
+.Supported languages with inputs
+|===
+
+| Supported language
+| Input format
+
+| Java
+| `LANGUAGE_JAVA`
+
+|===
+
+== Usage example
+
+In your YAML file, add:
+
+[source,yaml]
+----
+
+      - name: Scan with Find Security Bugs
+        uses: cloudbees-io/findsecbugs-sast-scan-code@v1
+        with:
+          language: "LANGUAGE_JAVA"
+----
+
+== License
+
+This code is made available under the 
+link:https://opensource.org/license/mit/[MIT license].
+
+== References
+
+* Learn more about link:https://docs.cloudbees.com/docs/cloudbees-saas-platform-actions/latest/[using actions in CloudBees workflows].
+* Learn about link:https://docs.cloudbees.com/docs/cloudbees-saas-platform/latest/[the CloudBees platform].
+
