@@ -9,7 +9,7 @@ runs:
   steps:
     - id: run-orchestrator
       name: findsecbugs
-      uses: docker://registry.saas-dev.beescloud.com/staging/compliance-findsecbugs:main-0eef2c6b0087350afeeb59c1928b5314d6f276e4
+      uses: docker://public.ecr.aws/l7o7z1g8/actions/findsecbugs-sast-actions:main-0eef2c6b0087350afeeb59c1928b5314d6f276e4
       shell: bash
       env:
         RUN_ID: ${{ cloudbees.run_id }}
@@ -25,7 +25,3 @@ runs:
         echo "Step ID: ${{step.internal.id}}"
         cd /
         /bin/bash -c "./executables/findsecbugs & while ! nc -z localhost 5015; do sleep 1; done && ./executables/orchestrator -scanConfig \"${CONFIG_JSON}\" execute-analyser && exit"
-
-
-       
-        
