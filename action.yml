@@ -10,7 +10,8 @@ runs:
     - id: run-orchestrator
       name: findsecbugs
       # latest image
-      uses: docker://public.ecr.aws/l7o7z1g8/actions/findsecbugs-sast-actions:main-28133529cd73bc2458cd9db943483a7ef77a2a04
+      # uses: docker://public.ecr.aws/l7o7z1g8/actions/findsecbugs-sast-actions:main-28133529cd73bc2458cd9db943483a7ef77a2a04
+      uses: docker://020229604682.dkr.ecr.us-east-1.amazonaws.com/actions/findsecbugs-sast-actions:CBP-21415-d81df685ddf682bb499d06b816dcb8fc00da5d5f
       shell: bash
       env:
         RUN_ID: ${{ cloudbees.run_id }}
